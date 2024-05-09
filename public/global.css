@@ -1,0 +1,180 @@
+/* Global CSS */
+html, body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+body {
+	color: #333;
+	background: linear-gradient(to bottom, darkblue, darkblue);
+	padding: 8px;
+}
+
+a {
+	color: rgb(0,100,200);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:visited {
+	color: rgb(0,80,160);
+}
+
+label {
+	display: block;
+}
+
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	padding: 0.4em;
+	margin: 0 0 0.5em 0;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+
+input:disabled {
+	color: #ccc;
+}
+
+button {
+	color: #333;
+	background-color: #f4f4f4;
+	outline: none;
+	border: none;
+}
+
+button:disabled {
+	color: #999;
+}
+
+button:not(:disabled):active {
+	background-color: #ddd;
+}
+
+button:focus {
+	border-color: #666;
+}
+
+.header {
+	background-color: black;
+	color: white;
+	text-align: center;
+	border-radius: 10px;
+	padding: 8px;
+	margin-bottom: 20px;
+}
+
+.input {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	max-width: 400px;
+	overflow-x: auto;
+}
+
+.todo-item {
+	text-align: center;
+	margin-top: 30px;
+	list-style-type: none;
+	transition: transform 0.3s ease;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 10px;
+}
+
+.todo-list-container {
+	width: 30%;
+	margin: 0 auto;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	padding: 20px;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+.input textarea {
+	flex: 1;
+	max-width: calc(100% - 80px);
+	max-height: 200px;
+	overflow-y: auto;
+}
+
+.todo-item-enter {
+	transform: translateY(-20px);
+	opacity: 0;
+}
+
+.todo-item-enter-active {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+.todo-item-leave {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+.todo-item-leave-active {
+	transform: translateY(-20px);
+	opacity: 0;
+}
+
+.footer-content {
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding: 20px;
+	box-sizing: border-box;
+	background-color: black;
+	color: white;
+}
+/* FadeIn efekti */
+.fade {
+	transition: opacity 0.5s;
+}
+
+.fade-enter {
+	opacity: 0;
+}
+
+.fade-enter-active {
+	opacity: 1;
+}
+
+/* .container sınıfına kaydırma çubuğu eklemek için */
+.container {
+	max-height: 80vh; /* İçeriğin maksimum yüksekliğini belirleyin */
+	overflow-y: auto; /* Dikey kaydırma çubuğunu otomatik olarak etkinleştirin */
+}
+
+/* İlgili içeriğin kaydırma çubuğunu kullanarak nasıl görüneceğini belirtmek için */
+.container::-webkit-scrollbar {
+	width: 8px; /* Kaydırma çubuğunun genişliği */
+}
+
+.container::-webkit-scrollbar-thumb {
+	background-color: #888; /* Kaydırma çubuğunun dolgu rengi */
+	border-radius: 4px; /* Kenar yuvarlama */
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+	background-color: #555; /* Fare üzerine gelindiğinde kaydırma çubuğunun dolgu rengi */
+}
+
+.todo-item input[type="checkbox"] {
+	margin-right: 5px; /* Adjust spacing between checkbox and text */
+}
+
+.todo-item input[type="checkbox"]:checked + span {
+	text-decoration: line-through; /* Apply line-through effect to the text when checkbox is checked */
+}
